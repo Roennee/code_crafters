@@ -1,15 +1,14 @@
 import socket  # noqa: F401
 
+server_socket = socket.create_server(("localhost", 8080))
 
-def main():
-    # You can use print statements as follows for debugging, they'll be visible when running tests.
-    print("Logs from your program will appear here!")
+connection, address = server_socket.accept() # wait for client
+print(f"accepted connecton from {address}")
 
-    
-    
-    server_socket = socket.create_server(("localhost", 4221), reuse_port=True)
-    server_socket.accept() # wait for client
+#read data
+data = connection.recv(1024)
+
+#send same data back 
+connection.sendall(data)
 
 
-if __name__ == "__main__":
-    main()
