@@ -9,8 +9,8 @@ print(f"accepted connecton from {address}")
 data = connection.recv(1024)
 
 #send same data back 
-connection.sendall("HTTP/1.1 200 OK\r\n\r\n")
-
+connection.sendall("HTTP/1.1 200 OK\r\n\r\n".encode())
+socket.close()
 
 if __name__ == "__main__":
     main()
