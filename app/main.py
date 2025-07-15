@@ -1,6 +1,6 @@
 import socket  # noqa: F401
 
-server_socket = socket.create_server(("localhost", 8080))
+server_socket = socket.create_server(("localhost", 4221))
 
 connection, address = server_socket.accept() # wait for client
 print(f"accepted connecton from {address}")
